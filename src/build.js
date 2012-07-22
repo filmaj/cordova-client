@@ -8,6 +8,25 @@ var cordova_util = require('./util'),
     fs = require('fs'),
     util = require('util');
 
+function compile_jade(src, dst) {
+    var jade = require('jade');
+    var options = {
+        filename: src,
+        pretty: true
+    };
+
+    try {
+        var stat = fs.lstatSync(src);
+        if (stat.isFile()) {
+            var str = fs.readFileSync(src, 'utf8');
+            var fn = jade.compile(str, options);
+            fs.writeFileSync(dst, fn(options));
+        }
+    } catch (e) {
+        throw e;
+    }
+}
+
 module.exports = function build () {
     var projectRoot = cordova_util.isCordova(process.cwd());
 
@@ -20,7 +39,13 @@ module.exports = function build () {
     var cfg = new config_parser(xml);
     var platforms = cfg.ls_platforms();
 
-    // Iterate over each added platform 
+    // If ./www/jade/ exists, compile the jade files
+    var jade_index = path.join(assets, 'jade', 'index.jade');
+    if (fs.existsSync(jade_index)) {
+        compile_jade(jade_index, path.join(assets, 'index.html'));
+    }
+
+    // Iterate over each added platform
     platforms.map(function(platform) {
         // Copy in latest www assets.
         var assetsPath;

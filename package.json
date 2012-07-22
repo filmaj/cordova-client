@@ -25,6 +25,9 @@
     "elementtree":"",
     "pluginstall":"git+https://github.com/filmaj/pluginstall.git"
   },
+  "optionalDependencies": {
+    "jade":""
+  },
   "devDependencies": {
     "jasmine-node":">=1.0.0"
   },
