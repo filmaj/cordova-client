@@ -26,6 +26,9 @@
     "pluginstall":"git+https://github.com/filmaj/pluginstall.git",
     "ncallbacks":"1.0.0"
   },
+  "optionalDependencies": {
+    "jade":""
+  },
   "devDependencies": {
     "jasmine-node":">=1.0.0"
   },
