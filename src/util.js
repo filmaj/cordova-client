@@ -51,11 +51,11 @@ module.exports = {
         }
 
         // specify which project tag to check out. minimum tag is 2.1.0rc1
-        var cordova_lib_tag = '2.1.0';
-        if (target == 'android') {
+        var cordova_lib_tag = '2.2.0rc1';
+        /*if (target == 'android') {
             // TODO: android hack. 2.1.0 tag messed up the create script
             cordova_lib_tag = '47daaaf';
-        }
+        }*/
 
         // Shell out to git.
         var outPath = path.join(__dirname, '..', 'lib', target);
