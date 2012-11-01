@@ -8,6 +8,7 @@ module.exports = {
     build:    require('./src/build'),
     emulate:  require('./src/emulate'),
     plugin:   require('./src/plugin'),
+    preview:  require('./src/preview'),
     on:       function() {
         cordova_events.on.apply(cordova_events, arguments);
     },

@@ -14,6 +14,7 @@ Project-Level Commands
     build ............................. builds a cordova project
     emulate ........................... starts emulator for cordova project
     docs .............................. serves docs at http://localhost:2222
+    preview [path to index or www] .... quickly generate a project called SmokeTest named AAA from src
 
 Example usage
 
