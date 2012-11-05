@@ -51,7 +51,7 @@ module.exports = {
         }
 
         // specify which project tag to check out. minimum tag is 2.2.0rc1
-        var cordova_lib_tag = '2.2.0rc1';
+        var cordova_lib_tag = '2.2.0';
 
         var outPath = path.join(__dirname, '..', 'lib', target);
         shell.mkdir('-p', outPath);
